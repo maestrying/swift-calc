@@ -9,14 +9,22 @@ import Foundation
 import UIKit
 
 class InputModel {
-    
-    
-    func printNum(label: UILabel, num: Int) {
-        label.text! += String(num)
+    private var digits: [Int] = []
+
+    func appendDigit(_ digit: Int) {
+        digits.append(digit)
+    }
+
+    func printDigits() -> String {
+        guard digits.count > 1 || digits.first != 0 else {
+            clear()
+            return "0"
+        }
+        return digits.drop(while: { $0 == 0 }).map(String.init).joined()
     }
     
-    func clear(label: UILabel) {
-        label.text! = "0"
+    func clear() {
+        digits.removeAll()
     }
     
 }
