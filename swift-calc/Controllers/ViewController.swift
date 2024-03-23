@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     // MARK: Main operations
     
     @IBAction func divideBtn(_ sender: UIButton) {
-        
+        resultLabel.text = calc.operationIs(.divide)
     }
     
     @IBAction func multiplyBtn(_ sender: UIButton) {

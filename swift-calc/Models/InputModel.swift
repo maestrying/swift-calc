@@ -13,6 +13,7 @@ enum Operations {
     case add
     case subtract
     case multiply
+    case divide
     case none
 }
 
@@ -47,6 +48,16 @@ class Calc {
         return String(result)
     }
     
+    // Divide the numbers
+    private func divide() -> String {
+        if Int(digits)! != 0 {
+            result /= Int(digits) ?? 0
+        } else { return "Ошибка" }
+        operation = .none
+        digits = String(result)
+        return String(result)
+    }
+    
     // Choice operation
     func operationIs(_ oper: Operations) -> String {
         resetLabel = true
@@ -56,6 +67,7 @@ class Calc {
         case .add: operation = .add
         case .subtract: operation = .subtract
         case .multiply: operation = .multiply
+        case .divide: operation = .divide
         default: break
         }
         
@@ -68,6 +80,7 @@ class Calc {
         case .add:      return add()
         case .subtract: return subtract()
         case .multiply: return multiply()
+        case .divide:   return divide()
         case .none:     return digits
         }
     }
