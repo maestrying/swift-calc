@@ -12,6 +12,7 @@ import UIKit
 enum Operations {
     case add
     case subtract
+    case multiply
     case none
 }
 
@@ -19,10 +20,7 @@ class Calc {
     private var digits: String = "0"
     private var result: Int = 0
     private var operation: Operations = .none
-    
-    private func printResoult() -> String {
-        return digits
-    }
+
     
     // Add the numbers
     private func add() -> String {
@@ -40,6 +38,14 @@ class Calc {
         return String(result)
     }
     
+    // Multiply the numbers
+    private func multiply() -> String {
+        result *= Int(digits) ?? 0
+        operation = .none
+        digits = String(result)
+        return String(result)
+    }
+    
     // Choice operation
     func operationIs(_ oper: Operations) {
         result = Int(digits) ?? 0
@@ -48,6 +54,7 @@ class Calc {
         switch oper {
         case .add: operation = .add
         case .subtract: operation = .subtract
+        case .multiply: operation = .multiply
         default: break
         }
     }
@@ -57,7 +64,8 @@ class Calc {
         switch operation {
         case .add:      return add()
         case .subtract: return subtract()
-        case .none:     return printResoult()
+        case .multiply: return multiply()
+        case .none:     return digits
         }
     }
     
@@ -65,10 +73,10 @@ class Calc {
     func printNums(_ num: Int) -> String {
         digits += String(num)
         
-        guard digits.first == "0" else { return printResoult() }
+        guard digits.first == "0" else { return digits }
         digits.removeFirst()
         
-        return printResoult()
+        return digits
     }
     
     // Clear label

@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func multiplyBtn(_ sender: UIButton) {
-        
+        calc.operationIs(.multiply)
     }
     
     @IBAction func addBtn(_ sender: UIButton) {
