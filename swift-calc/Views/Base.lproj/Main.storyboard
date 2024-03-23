@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_calc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -282,8 +282,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="32" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Ou-hfu" userLabel="textLabel">
-                                <rect key="frame" x="16" y="232" width="366" height="95.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-Ou-hfu" userLabel="textLabel">
+                                <rect key="frame" x="16" y="232" width="366" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -295,8 +295,8 @@
                         <constraints>
                             <constraint firstItem="nLe-Be-pcu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Fui-oa-Iol"/>
                             <constraint firstItem="Xyl-Ou-hfu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="184" id="GJL-iZ-HM3"/>
-                            <constraint firstItem="nLe-Be-pcu" firstAttribute="top" secondItem="Xyl-Ou-hfu" secondAttribute="bottom" constant="10" id="MmR-yo-qvA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLe-Be-pcu" secondAttribute="trailing" constant="10" id="Peb-I8-gC3"/>
+                            <constraint firstItem="nLe-Be-pcu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="289.5" id="Rfl-oI-CRS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xyl-Ou-hfu" secondAttribute="trailing" constant="32" id="ZVP-Jg-OJI"/>
                             <constraint firstItem="Xyl-Ou-hfu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aCn-ae-P0n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nLe-Be-pcu" secondAttribute="bottom" constant="36" id="scn-87-UCF"/>

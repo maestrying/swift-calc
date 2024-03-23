@@ -9,10 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
-    var inputModel = InputModel()
+    
+    var calc = Calc()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultLabel.text = "0"
+        
         
     }
     
@@ -20,8 +25,7 @@ class ViewController: UIViewController {
     // MARK: Numbers
     
     @IBAction func numBtn(_ sender: UIButton) {
-        inputModel.appendDigit(sender.tag)
-        resultLabel.text = inputModel.printDigits()
+        resultLabel.text = calc.printNums(sender.tag)
     }
     
     
@@ -35,14 +39,15 @@ class ViewController: UIViewController {
     // MARK: Advanced operations
     
     @IBAction func clearBtn(_ sender: UIButton) {
-        inputModel.clear()
-        resultLabel.text = "0"
+        resultLabel.text = calc.clear()
     }
     
     @IBAction func switchNegativeBtn(_ sender: UIButton) {
+        
     }
     
     @IBAction func percentBtn(_ sender: UIButton) {
+        
     }
     
     
@@ -57,14 +62,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addBtn(_ sender: UIButton) {
-        
+        calc.operationIs(.add)
     }
     
     @IBAction func subtractBtn(_ sender: UIButton) {
-        
+        calc.operationIs(.subtract)
     }
     
     @IBAction func equalBtn(_ sender: UIButton) {
+        resultLabel.text = calc.equal()
     }
     
 }
