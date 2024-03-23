@@ -20,6 +20,7 @@ class Calc {
     private var digits: String = "0"
     private var result: Int = 0
     private var operation: Operations = .none
+    private var resetLabel: Bool = false
 
     
     // Add the numbers
@@ -47,9 +48,9 @@ class Calc {
     }
     
     // Choice operation
-    func operationIs(_ oper: Operations) {
+    func operationIs(_ oper: Operations) -> String {
+        resetLabel = true
         result = Int(digits) ?? 0
-        digits = "0"
         
         switch oper {
         case .add: operation = .add
@@ -57,6 +58,8 @@ class Calc {
         case .multiply: operation = .multiply
         default: break
         }
+        
+        return digits
     }
     
     // Calculate result
@@ -71,6 +74,10 @@ class Calc {
     
     // Print nums in Label
     func printNums(_ num: Int) -> String {
+        if operation != .none && resetLabel == true {
+            digits = "0"
+            resetLabel = false
+        }
         digits += String(num)
         
         guard digits.first == "0" else { return digits }

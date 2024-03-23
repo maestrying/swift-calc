@@ -58,15 +58,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func multiplyBtn(_ sender: UIButton) {
-        calc.operationIs(.multiply)
+        resultLabel.text = calc.operationIs(.multiply)
     }
     
     @IBAction func addBtn(_ sender: UIButton) {
-        calc.operationIs(.add)
+        resultLabel.text = calc.operationIs(.add)
     }
     
     @IBAction func subtractBtn(_ sender: UIButton) {
-        calc.operationIs(.subtract)
+        resultLabel.text = calc.operationIs(.subtract)
     }
     
     @IBAction func equalBtn(_ sender: UIButton) {
