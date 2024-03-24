@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -287,16 +288,29 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTz-1W-GWZ">
+                                <rect key="frame" x="30" y="81" width="26" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZMg-9C-KD5" kind="show" id="NWk-Z9-iFq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jTz-1W-GWZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="0OJ-Ox-6Jm"/>
                             <constraint firstItem="nLe-Be-pcu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Fui-oa-Iol"/>
                             <constraint firstItem="Xyl-Ou-hfu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="GJL-iZ-HM3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLe-Be-pcu" secondAttribute="trailing" constant="10" id="Peb-I8-gC3"/>
                             <constraint firstItem="nLe-Be-pcu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="289.5" id="Rfl-oI-CRS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xyl-Ou-hfu" secondAttribute="trailing" constant="24" id="ZVP-Jg-OJI"/>
                             <constraint firstItem="Xyl-Ou-hfu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aCn-ae-P0n"/>
+                            <constraint firstItem="jTz-1W-GWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="pH9-Hg-os5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nLe-Be-pcu" secondAttribute="bottom" constant="36" id="scn-87-UCF"/>
                         </constraints>
                     </view>
@@ -308,8 +322,38 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Nca-Up-DJ5">
+            <objects>
+                <viewController id="ZMg-9C-KD5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5WZ-qe-O1M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ by Maestrying" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-aY-v6W">
+                                <rect key="frame" x="64" y="231" width="284.5" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uyQ-re-u4w"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mfu-aY-v6W" firstAttribute="top" secondItem="uyQ-re-u4w" secondAttribute="top" constant="231" id="ZdR-G6-vWs"/>
+                            <constraint firstItem="Mfu-aY-v6W" firstAttribute="leading" secondItem="uyQ-re-u4w" secondAttribute="leading" constant="64" id="guW-v2-53a"/>
+                            <constraint firstItem="uyQ-re-u4w" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mfu-aY-v6W" secondAttribute="trailing" id="w3n-ZJ-ToA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eL5-5I-jct"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DfR-WX-6jN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995.65217391304361" y="-28.125"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
