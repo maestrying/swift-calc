@@ -62,7 +62,7 @@ class Calc {
     }
     
     // Choice operation
-    func operationIs(_ oper: Operations) -> String {
+    func operationIs(_ oper: Operations) {
         resetLabel = true
         result = Double(digits) ?? 0
         
@@ -73,8 +73,13 @@ class Calc {
         case .divide: operation = .divide
         default: break
         }
-        
-        return digits
+    }
+    
+    func equalSquence() -> String {
+        if operation == .none {
+            return digits
+        }
+        return equal()
     }
     
     // Calculate result

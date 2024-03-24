@@ -54,19 +54,23 @@ class ViewController: UIViewController {
     // MARK: Main operations
     
     @IBAction func divideBtn(_ sender: UIButton) {
-        resultLabel.text = calc.operationIs(.divide)
+        resultLabel.text = calc.equalSquence()
+        calc.operationIs(.divide)
     }
     
     @IBAction func multiplyBtn(_ sender: UIButton) {
-        resultLabel.text = calc.operationIs(.multiply)
+        resultLabel.text = calc.equalSquence()
+        calc.operationIs(.multiply)
     }
     
     @IBAction func addBtn(_ sender: UIButton) {
-        resultLabel.text = calc.operationIs(.add)
+        resultLabel.text = calc.equalSquence()
+        calc.operationIs(.add)
     }
     
     @IBAction func subtractBtn(_ sender: UIButton) {
-        resultLabel.text = calc.operationIs(.subtract)
+        resultLabel.text = calc.equalSquence()
+        calc.operationIs(.subtract)
     }
     
     @IBAction func equalBtn(_ sender: UIButton) {
