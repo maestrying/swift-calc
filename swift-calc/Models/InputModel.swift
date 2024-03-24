@@ -19,7 +19,7 @@ enum Operations {
 }
 
 class Calc {
-    private var digits: String = "0"
+    var digits: String = "0"
     private var result: Double = 0
     private var operation: Operations = .none
     private var resetLabel: Bool = false
@@ -185,4 +185,19 @@ class Calc {
         firstOper = .none
         return digits
     }
+    
+    // Delete last symbol
+    func clearLastSymb() -> String {
+        guard digits.count > 1 else {
+            digits = "0"
+            return "0"
+        }
+        
+        var mutableLabel = digits
+        mutableLabel.removeLast()
+        
+        digits = mutableLabel
+        return mutableLabel
+    }
+    
 }

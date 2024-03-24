@@ -18,7 +18,17 @@ class ViewController: UIViewController {
         
         resultLabel.text = "0"
         
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(deleteLastSymbol(sender:)))
         
+        swipeGesture.direction = .left
+        
+        resultLabel.isUserInteractionEnabled = true
+        resultLabel.addGestureRecognizer(swipeGesture)
+        
+    }
+    
+    @objc func deleteLastSymbol(sender: UISwipeGestureRecognizer) {
+        resultLabel.text = calc.clearLastSymb()
     }
     
     
