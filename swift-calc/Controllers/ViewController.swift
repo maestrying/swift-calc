@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func switchNegativeBtn(_ sender: UIButton) {
+        resultLabel.text = calc.negative()
         
     }
     

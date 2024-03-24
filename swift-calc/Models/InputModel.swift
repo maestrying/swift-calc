@@ -22,6 +22,21 @@ class Calc {
     private var result: Double = 0
     private var operation: Operations = .none
     private var resetLabel: Bool = false
+    private var isNegative: Bool = false
+
+    // Negation switch
+    func negative() -> String {
+        if let number = Double(digits) {
+            if String(number).hasSuffix(".0") {
+                digits = String(-Int(number))
+                return String(-Int(number))
+            }
+            digits = String(-number)
+            return String(-number)
+        } else {
+            return digits
+        }
+    }
 
     // Perform the operation
     private func doOperation(res: Double) -> String {
