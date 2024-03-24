@@ -14,6 +14,7 @@ enum Operations {
     case subtract
     case multiply
     case divide
+    case percent
     case none
 }
 
@@ -24,6 +25,8 @@ class Calc {
     private var resetLabel: Bool = false
     private var isNegative: Bool = false
     private var comma: Bool = false
+    private var firstNum: Double = 0
+    private var firstOper: Operations = .none
 
     // Negation switch
     func negative() -> String {
@@ -63,6 +66,20 @@ class Calc {
         return String(result)
     }
     
+    // Percent
+    private func percent() -> String {
+        switch firstOper {
+        case .add: result = firstNum + result
+        case .subtract: result = firstNum - result
+        case .multiply: result = firstNum * result / 100
+        case .divide: result = firstNum / result
+        case .percent: break
+        case .none: result = firstNum / 100
+        }
+        
+        return doOperation(res: result)
+    }
+    
     // Add the numbers
     private func add() -> String {
         result += Double(digits) ?? 0
@@ -83,7 +100,7 @@ class Calc {
     
     // Divide the numbers
     private func divide() -> String {
-        if Int(digits)! != 0 {
+        if (Int(digits) ?? 0) != 0 {
             result /= Double(digits) ?? 0
         } else { return "Ошибка" }
         
@@ -92,23 +109,43 @@ class Calc {
     
     // Choice operation
     func operationIs(_ oper: Operations) {
-        comma = false
-        resetLabel = true
-        result = Double(digits) ?? 0
+        if operation == .none { firstOper = oper }
         
         switch oper {
         case .add: operation = .add
         case .subtract: operation = .subtract
         case .multiply: operation = .multiply
         case .divide: operation = .divide
+        case .percent: operation = .percent
         default: break
         }
+        
+        guard operation != .percent else { return }
+        comma = false
+        resetLabel = true
+        result = Double(digits) ?? 0
     }
     
     func equalSquence() -> String {
+        guard firstOper != .percent else {
+            if String(Double(digits)! / 100).hasSuffix(".0") { return String(Int(digits)! / 100) }
+            return String(Double(digits)! / 100)
+        }
+        if operation == .percent {
+            var percentNum = digits
+            firstNum = result
+            result = firstNum / 100 * (Double(percentNum) ?? 0)
+            if String(result).hasSuffix(".0") {
+                return String(Int(result))
+            } else {
+                return String(result)
+            }
+        }
+        
         if operation == .none {
             return digits
         }
+        
         return equal()
     }
     
@@ -119,6 +156,7 @@ class Calc {
         case .subtract: return subtract()
         case .multiply: return multiply()
         case .divide:   return divide()
+        case .percent:  return percent()
         case .none:     return digits
         }
     }
@@ -143,6 +181,8 @@ class Calc {
         result = 0
         operation = .none
         comma = false
+        firstNum = 0
+        firstOper = .none
         return digits
     }
 }

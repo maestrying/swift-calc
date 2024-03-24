@@ -48,7 +48,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func percentBtn(_ sender: UIButton) {
-        
+        calc.operationIs(.percent)
+        resultLabel.text = calc.equalSquence()
     }
     
     
