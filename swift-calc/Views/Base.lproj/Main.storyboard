@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oN-Dw-agy" userLabel="ACButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="AC" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="AC" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,7 +37,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AP-Y0-s1r">
                                                 <rect key="frame" x="102.5" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="+/-" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="+/-" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +50,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZz-LW-h8e">
                                                 <rect key="frame" x="205" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="%" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="%" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,7 +63,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8R-wG-591">
                                                 <rect key="frame" x="307.5" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="÷" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="÷" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
@@ -115,7 +116,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-e3-ldr">
                                                 <rect key="frame" x="307.5" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="×" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="×" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
@@ -168,7 +169,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-So-Hf3">
                                                 <rect key="frame" x="307.5" y="0.0" width="86.5" height="84.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="–" cornerStyle="capsule" buttonSize="mini">
+                                                <buttonConfiguration key="configuration" style="filled" title="–" cornerStyle="capsule" buttonSize="mini">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
@@ -221,7 +222,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMh-Oa-0fX">
                                                 <rect key="frame" x="307.5" y="0.0" width="86.5" height="85"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="+" cornerStyle="capsule" buttonSize="small">
+                                                <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="capsule" buttonSize="small">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
@@ -266,7 +267,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-S5-Dgc">
                                                         <rect key="frame" x="102.5" y="0.0" width="86.5" height="85"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="gray" title="=" cornerStyle="capsule" buttonSize="small">
+                                                        <buttonConfiguration key="configuration" style="filled" title="=" cornerStyle="capsule" buttonSize="small">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
