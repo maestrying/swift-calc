@@ -253,13 +253,13 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-j6-lkx">
                                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="gray" title="," cornerStyle="capsule" buttonSize="small">
+                                                        <buttonConfiguration key="configuration" style="gray" title="." cornerStyle="capsule" buttonSize="small">
                                                             <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="baseBackgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="commaBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDM-mM-eUv"/>
+                                                            <action selector="pointBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WA2-yB-QT4"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-S5-Dgc">

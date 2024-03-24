@@ -31,8 +31,8 @@ class ViewController: UIViewController {
     
     // MARK: Comma
     
-    @IBAction func commaBtn(_ sender: UIButton) {
-        
+    @IBAction func pointBtn(_ sender: UIButton) {
+        resultLabel.text = calc.addPoint()
     }
     
     

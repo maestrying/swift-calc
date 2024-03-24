@@ -23,6 +23,7 @@ class Calc {
     private var operation: Operations = .none
     private var resetLabel: Bool = false
     private var isNegative: Bool = false
+    private var comma: Bool = false
 
     // Negation switch
     func negative() -> String {
@@ -36,6 +37,19 @@ class Calc {
         } else {
             return digits
         }
+    }
+    
+    // Add point
+    func addPoint() -> String {
+        if !comma {
+            digits += "."
+            comma = true
+            return digits
+        }
+        
+        comma = true
+        
+        return digits
     }
 
     // Perform the operation
@@ -78,6 +92,7 @@ class Calc {
     
     // Choice operation
     func operationIs(_ oper: Operations) {
+        comma = false
         resetLabel = true
         result = Double(digits) ?? 0
         
@@ -116,7 +131,7 @@ class Calc {
         }
         digits += String(num)
         
-        guard digits.first == "0" else { return digits }
+        guard digits.first == "0" && !comma else { return digits }
         digits.removeFirst()
         
         return digits
@@ -127,6 +142,7 @@ class Calc {
         digits = "0"
         result = 0
         operation = .none
+        comma = false
         return digits
     }
 }
