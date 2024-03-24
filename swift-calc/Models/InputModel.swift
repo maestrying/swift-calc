@@ -19,49 +19,52 @@ enum Operations {
 
 class Calc {
     private var digits: String = "0"
-    private var result: Int = 0
+    private var result: Double = 0
     private var operation: Operations = .none
     private var resetLabel: Bool = false
 
+    // Perform the operation
+    private func doOperation(res: Double) -> String {
+        operation = .none
+        digits = String(result)
+        if String(result).hasSuffix(".0") {
+            digits = String(Int(result))
+            return String(Int(result))
+        }
+        return String(result)
+    }
     
     // Add the numbers
     private func add() -> String {
-        result += Int(digits) ?? 0
-        operation = .none
-        digits = String(result)
-        return String(result)
+        result += Double(digits) ?? 0
+        return doOperation(res: result)
     }
     
     // Subtract the numbers
     private func subtract() -> String {
-        result -= Int(digits) ?? 0
-        operation = .none
-        digits = String(result)
-        return String(result)
+        result -= Double(digits) ?? 0
+        return doOperation(res: result)
     }
     
     // Multiply the numbers
     private func multiply() -> String {
-        result *= Int(digits) ?? 0
-        operation = .none
-        digits = String(result)
-        return String(result)
+        result *= Double(digits) ?? 0
+        return doOperation(res: result)
     }
     
     // Divide the numbers
     private func divide() -> String {
         if Int(digits)! != 0 {
-            result /= Int(digits) ?? 0
+            result /= Double(digits) ?? 0
         } else { return "Ошибка" }
-        operation = .none
-        digits = String(result)
-        return String(result)
+        
+        return doOperation(res: result)
     }
     
     // Choice operation
     func operationIs(_ oper: Operations) -> String {
         resetLabel = true
-        result = Int(digits) ?? 0
+        result = Double(digits) ?? 0
         
         switch oper {
         case .add: operation = .add
