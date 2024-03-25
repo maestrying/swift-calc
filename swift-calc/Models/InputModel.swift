@@ -29,7 +29,22 @@ class Calc {
     private var comma: Bool = false
     private var firstNum: Double = 0
     private var firstOper: Operations = .none
+    private let limitCountSymbol: Int = 9
 
+    
+    // Checking for the length of the string
+    private func checkLengthString() -> String {
+        var str = digits
+
+        if str.count > limitCountSymbol {
+            let range = str.index(str.startIndex, offsetBy: limitCountSymbol)..<str.endIndex
+            str.removeSubrange(range)
+            return str
+        }
+        
+        return str
+    }
+    
     
     // Perform the operation
     private func doOperation() -> String {
@@ -37,9 +52,9 @@ class Calc {
         digits = String(result)
         if String(result).hasSuffix(".0") {
             digits = String(Int(result))
-            return String(Int(result))
+            return checkLengthString()
         }
-        return String(result)
+        return checkLengthString()
     }
     
     
@@ -91,15 +106,17 @@ class Calc {
     
     // Negation switch
     func negative() -> String {
+        guard digits.count < limitCountSymbol else { return checkLengthString() }
+        
         if let number = Double(digits) {
             if String(number).hasSuffix(".0") {
                 digits = String(-Int(number))
-                return String(-Int(number))
+                return checkLengthString()
             }
             digits = String(-number)
-            return String(-number)
+            return checkLengthString()
         } else {
-            return digits
+            return checkLengthString()
         }
     }
     
@@ -109,12 +126,12 @@ class Calc {
         if !comma {
             digits += "."
             comma = true
-            return digits
+            return checkLengthString()
         }
         
         comma = true
         
-        return digits
+        return checkLengthString()
     }
     
     
@@ -135,6 +152,7 @@ class Calc {
         comma = false
         resetLabel = true
         result = Double(digits) ?? 0
+        digits = "0"
     }
     
     
@@ -142,21 +160,22 @@ class Calc {
     func equalSquence() -> String {
         guard firstOper != .percent else {
             if String(Double(digits)! / 100).hasSuffix(".0") { return String(Int(digits)! / 100) }
-            return String(Double(digits)! / 100)
+            return checkLengthString()
         }
+        
         if operation == .percent {
             var percentNum = digits
             firstNum = result
             result = firstNum / 100 * (Double(percentNum) ?? 0)
             if String(result).hasSuffix(".0") {
-                return String(Int(result))
+                return checkLengthString()
             } else {
-                return String(result)
+                return checkLengthString()
             }
         }
         
         if operation == .none {
-            return digits
+            return checkLengthString()
         }
         
         return equal()
@@ -178,16 +197,18 @@ class Calc {
     
     // Print nums in Label
     func printNums(_ num: Int) -> String {
+        guard digits.count < limitCountSymbol else { return checkLengthString() }
+        
         if operation != .none && resetLabel == true {
             digits = "0"
             resetLabel = false
         }
         digits += String(num)
         
-        guard digits.first == "0" && !comma else { return digits }
+        guard digits.first == "0" && !comma else { return checkLengthString() }
         digits.removeFirst()
         
-        return digits
+        return checkLengthString()
     }
     
     
@@ -199,7 +220,7 @@ class Calc {
         comma = false
         firstNum = 0
         firstOper = .none
-        return digits
+        return checkLengthString()
     }
     
     
