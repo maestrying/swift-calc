@@ -33,8 +33,8 @@ class Calc {
 
     
     // Checking for the length of the string
-    private func checkLengthString() -> String {
-        var str = digits
+    private func checkLengthString(_ string: String) -> String {
+        var str = string
 
         if str.count > limitCountSymbol {
             let range = str.index(str.startIndex, offsetBy: limitCountSymbol)..<str.endIndex
@@ -52,9 +52,9 @@ class Calc {
         digits = String(result)
         if String(result).hasSuffix(".0") {
             digits = String(Int(result))
-            return checkLengthString()
+            return checkLengthString(String(Int(result)))
         }
-        return checkLengthString()
+        return checkLengthString(String(result))
     }
     
     
@@ -96,7 +96,7 @@ class Calc {
     
     // Divide the numbers
     private func divide() -> String {
-        if (Int(digits) ?? 0) != 0 {
+        if (Double(digits) ?? 0) != 0 {
             result /= Double(digits) ?? 0
         } else { return "Ошибка" }
         
@@ -106,17 +106,17 @@ class Calc {
     
     // Negation switch
     func negative() -> String {
-        guard digits.count < limitCountSymbol else { return checkLengthString() }
+        guard digits.count < limitCountSymbol else { return checkLengthString(digits) }
         
         if let number = Double(digits) {
             if String(number).hasSuffix(".0") {
                 digits = String(-Int(number))
-                return checkLengthString()
+                return checkLengthString(String(-Int(number)))
             }
             digits = String(-number)
-            return checkLengthString()
+            return checkLengthString(String(-number))
         } else {
-            return checkLengthString()
+            return checkLengthString(digits)
         }
     }
     
@@ -126,19 +126,17 @@ class Calc {
         if !comma {
             digits += "."
             comma = true
-            return checkLengthString()
+            return checkLengthString(digits)
         }
         
         comma = true
         
-        return checkLengthString()
+        return checkLengthString(digits)
     }
     
     
     // Choice operation
     func operationIs(_ oper: Operations) {
-        if operation == .none { firstOper = oper }
-        
         switch oper {
         case .add: operation = .add
         case .subtract: operation = .subtract
@@ -149,6 +147,7 @@ class Calc {
         }
         
         guard operation != .percent else { return }
+        firstOper = operation
         comma = false
         resetLabel = true
         result = Double(digits) ?? 0
@@ -159,8 +158,8 @@ class Calc {
     // Calculations in the flow
     func equalSquence() -> String {
         guard firstOper != .percent else {
-            if String(Double(digits)! / 100).hasSuffix(".0") { return String(Int(digits)! / 100) }
-            return checkLengthString()
+            if String(Double(digits)! / 100).hasSuffix(".0") { return checkLengthString(String(Int(digits)! / 100)) }
+            return checkLengthString(String(Double(digits)! / 100))
         }
         
         if operation == .percent {
@@ -168,14 +167,14 @@ class Calc {
             firstNum = result
             result = firstNum / 100 * (Double(percentNum) ?? 0)
             if String(result).hasSuffix(".0") {
-                return checkLengthString()
+                return checkLengthString(String(Int(result)))
             } else {
-                return checkLengthString()
+                return checkLengthString(String(result))
             }
         }
         
         if operation == .none {
-            return checkLengthString()
+            return checkLengthString(digits)
         }
         
         return equal()
@@ -197,7 +196,7 @@ class Calc {
     
     // Print nums in Label
     func printNums(_ num: Int) -> String {
-        guard digits.count < limitCountSymbol else { return checkLengthString() }
+        guard digits.count < limitCountSymbol else { return checkLengthString(digits) }
         
         if operation != .none && resetLabel == true {
             digits = "0"
@@ -205,10 +204,10 @@ class Calc {
         }
         digits += String(num)
         
-        guard digits.first == "0" && !comma else { return checkLengthString() }
+        guard digits.first == "0" && !comma else { return checkLengthString(digits) }
         digits.removeFirst()
         
-        return checkLengthString()
+        return checkLengthString(digits)
     }
     
     
@@ -220,7 +219,7 @@ class Calc {
         comma = false
         firstNum = 0
         firstOper = .none
-        return checkLengthString()
+        return checkLengthString(digits)
     }
     
     
